@@ -5,13 +5,14 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 
 public class MicroTask2 {
-    public static String timezoneComparator(String stringDateTime, String stringTimezone1, String stringTimezone2) {
-        var DEFAULT_TIME_ZONE = ZoneId.of("UTC-9");
+    public static String timezoneComparator(String stringDateTime, String stringTimezone1, String stringTimezone2, String defaultZone) {
+        var default_time_zone = ZoneId.of(defaultZone);
+
         LocalDateTime dateTime = ZonedDateTime.parse(stringDateTime).toLocalDateTime();
         ZoneId timezone1 = ZoneId.of(stringTimezone1);
         ZoneId timezone2 = ZoneId.of(stringTimezone2);
-        LocalDateTime dateTime1 = dateTime.atZone(timezone1).withZoneSameInstant(DEFAULT_TIME_ZONE).toLocalDateTime();
-        LocalDateTime dateTime2 = dateTime.atZone(timezone2).withZoneSameInstant(DEFAULT_TIME_ZONE).toLocalDateTime();
+        LocalDateTime dateTime1 = dateTime.atZone(timezone1).withZoneSameInstant(default_time_zone).toLocalDateTime();
+        LocalDateTime dateTime2 = dateTime.atZone(timezone2).withZoneSameInstant(default_time_zone).toLocalDateTime();
 
         int difference = 0;
 
