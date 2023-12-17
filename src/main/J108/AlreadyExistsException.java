@@ -4,7 +4,7 @@ public class AlreadyExistsException extends RuntimeException {
     private String alreadyExistingString;
     private int position;
     AlreadyExistsException(String existing, int position) {
-        super("Введенный вами текст уже был введён: ");
+        super("Введенный вами текст \""  + existing + "\" уже был введён под номером " + position);
         this.position = position;
         alreadyExistingString = existing;
     }
