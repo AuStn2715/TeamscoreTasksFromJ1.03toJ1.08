@@ -20,7 +20,7 @@ public class MicroTask1 {
                 list.add(input);
             }
             catch (AlreadyExistsException exp) {
-                System.err.println("Введённое вами значение \"" + exp.getValue() + "\" уже было введено под номером " + exp.getPosition());
+                System.err.println(exp.getMessage() + exp.getValue() + " под номером " + exp.getPosition());
             }
         }
     }
