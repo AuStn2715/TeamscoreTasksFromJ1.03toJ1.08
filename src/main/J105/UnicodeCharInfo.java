@@ -27,7 +27,6 @@ public class UnicodeCharInfo {
     public char prevChar() {
         return (char) ((int) var - 1);
     }
-    //ToDo
 
     int DIGIT = 0;
     int LETTER_UPPER = 1;
