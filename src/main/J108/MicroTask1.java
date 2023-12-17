@@ -14,14 +14,13 @@ public class MicroTask1 {
             try {
                 input = in.next();
                 if (!list.isEmpty() && list.contains(input)) {
-
-                    throw new AlreadyExistsException("Введённый вами текст уже был введён: ", input);
+                    int i = list.indexOf(input) + 1; // пусть нумерация идёт по человечески с 1ого введенного текста
+                    throw new AlreadyExistsException(input, i);
                 }
                 list.add(input);
             }
             catch (AlreadyExistsException exp) {
-                int i = list.indexOf(exp.getValue()) + 1; // пусть нумерация идёт по человечески с 1ого введенного текста
-                System.err.println(exp.getMessage() + exp.getValue() + " под номером " + i);
+                System.err.println("Введённое вами значение \"" + exp.getValue() + "\" уже было введено под номером " + exp.getPosition());
             }
         }
     }
